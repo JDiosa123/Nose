@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Me amas?</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -21,15 +22,12 @@
     <script>
         const btnNo = document.getElementById("btnNo");
 
-        // Para que se mueva en celular (cuando lo intentan tocar)
         btnNo.addEventListener("touchstart", moverBoton);
-
-        // Para que se mueva en computador (cuando pasan el mouse)
         btnNo.addEventListener("mouseover", moverBoton);
 
         function moverBoton() {
             const ancho = window.innerWidth - 100;
-            const alto = window.innerHeight - 50;
+            const alto = window.innerHeight - 60;
 
             const x = Math.random() * ancho;
             const y = Math.random() * alto;
