@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Me amas?</title>
+<link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>¿Me amas? 💖</h1>
+    
+    <div class="buttons">
+        <button class="yes" onclick="mostrarMensaje()">Sí 💕</button>
+        <button class="no" onclick="moverBoton(this)">No 😢</button>
+    </div>
+
+    <div id="mensaje">
+        Sabía que me amabas 😍💖 Te amo mucho.
+    </div>
+</div>
+
+<script>
+function mostrarMensaje(){
+    document.getElementById("mensaje").style.display = "block";
+}
+
+function moverBoton(boton){
+    boton.style.position = "absolute";
+    boton.style.top = Math.random() * 80 + "%";
+    boton.style.left = Math.random() * 80 + "%";
+}
+</script>
+
+</body>
+</html>
