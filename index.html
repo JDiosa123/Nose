@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Me amas?</title>
-<link rel="stylesheet" href="styless.css">
+    <meta charset="UTF-8">
+    <title>¿Me amas?</title>
+    <link rel="stylesheet" href="styless.css">
 </head>
-
 <body>
 
-<div class="container">
-    <h1>¿Me amas? 💖</h1>
-    
-    <div class="buttons">
-        <button class="yes" onclick="mostrarMensaje()">Sí 💕</button>
-        <button class="no" onclick="moverBoton(this)">No 😢</button>
+    <div class="container">
+        <h1>¿Me amas? 💕</h1>
+
+        <div class="botones">
+            <button onclick="decirSi()" id="btnSi">Sí 💖</button>
+            <button id="btnNo">No 💔</button>
+        </div>
+
+        <p id="mensaje"></p>
     </div>
 
-    <div id="mensaje">
-        Sabía que me amabas 😍💖 Te amo mucho.
-    </div>
-</div>
+    <script>
+        const btnNo = document.getElementById("btnNo");
 
-<script>
-function mostrarMensaje(){
-    document.getElementById("mensaje").style.display = "block";
-}
+        // Para que se mueva en celular (cuando lo intentan tocar)
+        btnNo.addEventListener("touchstart", moverBoton);
 
-function moverBoton(boton){
-    boton.style.position = "absolute";
-    boton.style.top = Math.random() * 80 + "%";
-    boton.style.left = Math.random() * 80 + "%";
-}
-</script>
+        // Para que se mueva en computador (cuando pasan el mouse)
+        btnNo.addEventListener("mouseover", moverBoton);
+
+        function moverBoton() {
+            const ancho = window.innerWidth - 100;
+            const alto = window.innerHeight - 50;
+
+            const x = Math.random() * ancho;
+            const y = Math.random() * alto;
+
+            btnNo.style.position = "absolute";
+            btnNo.style.left = x + "px";
+            btnNo.style.top = y + "px";
+        }
+
+        function decirSi() {
+            btnNo.style.display = "none";
+            document.getElementById("mensaje").innerHTML = "Sabía que me amabas 😍💞";
+        }
+    </script>
 
 </body>
 </html>
